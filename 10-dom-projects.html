@@ -2,13 +2,32 @@
 <html>
   <head>
     <title>DOM Projects</title>
+    <style>
+      .subscribe-button{
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      .is-subscribed{
+        background-color: gray;
+        color: black;
+      }
+
+    </style>
   </head>
 
   <body>
     <p>
       YouTube Subscribe Button
     </p>
-    <button onclick=" Subscribe(); " class="js-Subscribe-button">Subscribe</button>   
+    <button onclick=" Subscribe(); " class="js-Subscribe-button subscribe-button">Subscribe</button>   
 
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping.</p>
@@ -41,7 +60,8 @@
       //console.log(document.querySelector('.js-Subscribe-button'));
       const buttonElement = document.querySelector('.js-Subscribe-button');
       if(buttonElement.innerHTML === 'Subscribe'){
-        buttonElement.innerHTML = 'Subscribed'
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
       } else{
         buttonElement.innerHTML = 'Subscribe'
       }
@@ -52,8 +72,10 @@
       const inputElement = document.querySelector('.js-cost-input');
       cost = Number(inputElement.value);
       console.log(cost);
-      if(cost < 40){
-        cost += 10;
+      cost = cost * 100;
+      if(cost < 4000){
+        cost += 1000;
+        cost = cost/100;
       }
       document.querySelector('.js-total-input').innerHTML = `$${cost}`;
     } 

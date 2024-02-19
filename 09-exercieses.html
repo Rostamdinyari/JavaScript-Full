@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-exercieses</title>
+  </head>
+  <body>
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: heads';
+    ">heads</button>
+
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: tails';
+    ">tails</button>
+
+    <input class="input" placeholder="Enter your name..." onkeydown="nameType(event)">
+    <button class="submit" onclick=" showName()" >Submit</button>
+    <p class="name"></p>
+
+    <p class="js-choice"></p>
+  </body>
+  <script>
+    function showName(){
+      inputElement = document.querySelector('.input');
+      name = inputElement.value;      
+      console.log(name);
+      document.querySelector('.name').innerHTML = `your name is: ${name}`;
+    }
+
+    function nameType(event){
+      console.log(event.key);
+      if( event.key === 'Enter'){
+        showName()
+      }
+    }
+  </script>
+
+</html>
