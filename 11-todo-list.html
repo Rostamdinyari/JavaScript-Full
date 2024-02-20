@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list</title>
+    <link rel="stylesheet" href="styles/11-todo-list.css">
+    <style>
+      .list{
+        font-size: 15px;
+        font-family: Arial;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="list">Todo List Practice 1</p>
+    <div class="todo-input-grid">
+    <input  class="js-name-input" placeholder="Todo name" onkeydown=" enterOnKey(event)">
+    <input class="js-date-input" type="date">
+    <button  onclick="addTodo()" >Add</button>
+  </div>
+    <div class="js-todo-list todo-grid"></div>
+    <script src="scripts/11-todo-list.js"></script>
+    
+  </body>
+
+  
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and loops</title>
+    <style>
+      .list{
+        font-size: 15px;
+        font-family: Arial;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="list">Todo List Practice 1</p>
+    <input class="input" placeholder="Todo name" onclick="
+    addToArray()" onkeydown=" enterOnKey(event)">
+    <button>Add</button>
+    <script>
+      function addToArray(){
+        myArray = document.querySelector('.input');
+        arrayIndex = myArray.value;
+        todoList = [];
+        i = 0;
+        todoList.push(arrayIndex[i]);
+        console.log(todoList);
+        i++;
+      }
+
+      function enterOnKey(event){
+        if(event.key === 'Enter'){
+          addToArray();
+        }
+
+      }
+      
+
+    </script>
+    
+  </body>
+
+  
+</html>
